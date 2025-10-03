@@ -1,41 +1,36 @@
 {
-  "name": "survev",
-  "version": "0.1.23",
+  "name": "@survev/client",
+  "private": true,
   "type": "module",
-  "description": "Open Source Surviv.io Server",
   "scripts": {
-    "survev-setup": "pnpm install && tsx setup.ts",
-    "dev": "concurrently \"pnpm run dev:api\" \"pnpm run dev:game\" \"pnpm run dev:client\"",
-    "dev:server": "cd server && pnpm dev",
-    "dev:api": "cd server && pnpm dev:api",
-    "dev:game": "cd server && pnpm dev:game",
-    "dev:client": "cd client && pnpm dev",
-    "build": "cd server && pnpm build && cd ../client && pnpm build",
-    "stressTest": "cd server && pnpm stressTest",
-    "lint": "biome check --write",
-    "lint:ci": "biome check"
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "dev": "vite dev",
+    "preview": "vite preview",
+    "lint": "cd .. && pnpm lint"
   },
-  "engines": {
-    "node": ">=20.12.0"
-  },
-  "author": "Leia",
-  "license": "GPL-3.0-or-later",
-  "devDependencies": {
-    "@biomejs/biome": "2.0.5",
-    "@types/hjson": "^2.4.6",
-    "@types/node": "^22.18.6",
-    "concurrently": "^9.2.1",
-    "typescript": "^5.9.2"
-  },
-  "workspaces": [
-    "client",
-    "server",
-    "shared"
-  ],
-  "packageManager": "pnpm@10.13.1",
   "dependencies": {
-    "enquirer": "^2.4.1",
-    "hjson": "^3.2.2",
-    "tsx": "^4.20.6"
+    "@taufik-nurrohman/color-picker": "1.4.2",
+    "base64-js": "^1.5.1",
+    "bit-buffer": "^0.2.5",
+    "bootstrap": "^4.6.2",
+    "ejs": "^3.1.10",
+    "jquery": "^3.7.1",
+    "pixi.js-legacy": "^7.4.3",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "@tweakpane/core": "^2.0.5",
+    "@types/ejs": "^3.1.5",
+    "@types/jquery": "^3.5.33",
+    "canvas": "^3.2.0",
+    "codefend": "^3.2.0",
+    "maxrects-packer": "^2.7.3",
+    "sharp": "^0.33.5",
+    "tsx": "^4.20.6",
+    "turnstile-types": "^1.2.3",
+    "tweakpane": "^4.0.5",
+    "vite": "^6.3.6",
+    "vite-plugin-strip-block": "^1.0.1"
   }
 }

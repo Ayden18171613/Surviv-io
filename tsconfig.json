@@ -1,18 +1,27 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "node",
+    "lib": ["DOM", "ESNext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "esModuleInterop": true,
+    "outDir": "./dist",
+    "newLine": "lf",
     "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": true,
     "resolveJsonModule": true,
-    "sourceMap": true,
-    "strictNullChecks": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
     "allowJs": true,
     "strict": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "types": ["vite/client", "turnstile-types"]
   },
-  "exclude": ["node_modules", "dist"],
-  "include": ["shared", "./*.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "../shared/",
+    "atlas-builder/**/*.ts",
+    "global.d.ts"
+  ]
 }
